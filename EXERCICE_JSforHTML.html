@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>JAVASCRIPT</title>
+
+ 
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+<!-- FIN HEADER -->
+
+
+<div class="container">
+
+    <div class="row Justify-content-between">
+        <div class="col-12">
+            <button id="bouton1"type="button" class="btn btn-primary">Exo final 1</button>
+            <button id="bouton2"type="button" class="btn btn-primary">Exo final 2</button>
+            <button id="bouton3"type="button" class="btn btn-primary">Exo final 3</button>
+            <button id="bouton4"type="button" class="btn btn-primary">Exo final 4</button>
+            <button id="bouton5"type="button" class="btn btn-primary">Exo final 5</button>
+            <button id="bouton6"type="button" class="btn btn-primary">Exo</button>
+            <button id="bouton7"type="button" class="btn btn-primary">Exo</button>
+            <button id="bouton8"type="button" class="btn btn-primary">Exo</button>
+            <button id="bouton9"type="button" class="btn btn-primary">Exo</button>
+            <button id="bouton10"type="button" class="btn btn-primary">Exo</button>
+            <button id="bouton11"type="button" class="btn btn-primary">Exo</button>
+            <button id="bouton12"type="button" class="btn btn-primary">Exo</button>
+        </div>
+    </div>
+
+    <!-- FORMULAIRE méthode post-->
+
+    <div class="row Justify-content-between"></div>
+        <form method="post" action ="" class="col-12  px-0">
+
+        <div class="form-group">
+            <legend>Vos Coordonnées:</legend>
+            <p>Les zones avec une astérisque * sont obligatoires pour l'envoi du formulaire</p>
+        </div>
+
+                    <!-- Formulaire Société -->
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="DemandeSociété" class="  col-sm-2 col-form-label align-self-center py-2">Votre Société*:</label>
+            <div class="col-sm-10 px-0">
+                <input type="text"  class=" form-control-plaintext py-2 border" id="societe" placeholder="saisir votre Société" value ="" >
+            </div>
+        </div>
+
+            <!-- required supprimé et remplacé par validaiton js -->
+
+
+                    <!-- Formulaire Personne à contacter -->
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="contacturgence" class=" col-sm-2 col-form-label align-self-center py-2">Personne à contacter*:</label>
+            <div class="col-sm-10 px-0">
+                <input type="text"  class=" form-control-plaintext py-2 border"  id="contactPersonne" placeholder="saisir le nom du contact d'urgence" value ="" required>
+            </div>
+        </div>
+<!-- required minlength='5' pour limiter à 5 caractères  -->
+
+                    <!-- Formulaire Adresse -->
+
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="Adresse" class="  col-sm-2 col-form-label align-self-center py-2">Adresse:</label>
+            <div class="col-sm-10 px-0">
+                <textarea type="text"  class=" form-control-plaintext py-2 border" id="adresseEntreprise" placeholder="Saisir votre Adresse"></textarea>
+            </div>
+        </div>
+
+            <!-- Formulaire Code Postal -->
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="codepostal" class="  col-sm-2 col-form-label align-self-center py-2">Code Postal*:</label>
+            <div class="col-sm-10 px-0">
+                <input type="text"   class=" form-control-plaintext py-2 border" id="codePostal" placeholder="Saisir votre Code Postal" required>
+            </div>
+        </div>
+<!-- pattern="[0-9]{5}" pour limiter à 5 chiffres -->
+
+                <!-- Formulaire Ville -->
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="Ville" class="  col-sm-2 col-form-label align-self-center py-2">Ville*:</label>
+            <div class="col-sm-10 px-0">
+                <input type="text"  class=" form-control-plaintext py-2 border" id="ville" placeholder="Saisir votre Ville" required>
+            </div>
+        </div>
+
+            <!-- Formulaire email -->
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="email" class="col-sm-2 col-form-label align-self-center py-2">email*:</label>
+            <div class="col-sm-10 px-0">
+                <input type="email"  class=" form-control-plaintext py-2 border" id="email" placeholder="gerard.manvusa@afpa.fr" required>
+            </div>
+        </div>
+              
+            <!-- Formulaire téléphone-->
+
+        <div class="row form-group  my-2 mx-auto">
+            <label for="tel" class="  col-sm-2 col-form-label align-self-center py-2">Tél:</label>
+            <div class="col-sm-10 px-0">
+                <input type="text"  class=" form-control-plaintext py-2 border" id="telephone" placeholder="Saisir votre numéro de téléphone">
+            </div>
+        </div>
+
+
+        <div class="row form-group my-2 mx-auto">
+
+                <!-- select -->
+<!-- et pour info, dans mon HTLM mon textarea a l'id "textEnvironnement" et ma liste select l'id "selectEnvironnement" -->
+            <div class="col-2 px-0">
+                <label class="col-sm-12 col-form-label align-self-center py-2" for="inlineFormCustomSelect" >saisissez l'environnement technique du projet*</label>
+                <div class="col-12 px-0">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id = "selectEnvironnement" required>
+                        <option selected>Choisissez</option>
+                        <option value="1">Access</option>
+                        <option value="2">Java</option>
+                        <option value="3">Delphi</option>
+                        <option value="4">Visual Basic</option>
+                        <option value="5">Power builder</option>
+                        <option value="6">Internet</option>
+                        <option value="7">Intranet</option>
+                        <option value="8">Windows NT</option>
+                        <option value="9">Unix</option>
+                        <option value="10">Oracle</option>
+                        <option value="11">SQL</option>
+                        <option value="12">Autres</option>
+                    </select>
+                </div>
+            </div>
+
+
+                <!-- textarea -->
+
+            <div class="col-10 px-0">
+                    <div class="col-12 px-0">
+                        <label for="Adresse" class="  col-sm-2 col-form-label align-self-center py-2"></label>
+                        <div class="col-sm-12 px-0">
+                        <textarea type="text"  class=" form-control-plaintext py-2 border" id="testEnvironnement" placeholder="Saisir votre Adresse"></textarea>
+                    </div>
+            </div>
+
+
+                <!-- boutons -->
+
+ 
+        <div class="row col-12 my-5 Justify-content-between">
+                <button class="col-4 btn btn-primary" id ="boutonsoumission" type="submit">submit</button>
+                <input class="col-4 btn btn-light" type="reset" name="annulation" value="Annuler" >
+        </div>
+
+    </div>
+
+
+<!-- FIN CONTENU -->
+
+
+<!-- FOOTER -->
+<!-- FIN FOOTER -->
+
+<!-- intégration jQuery first, then Popper.js, then Bootstrap JS --> 
+<!--  
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+-->
+
+<!-- intégration du fichier javascript codé en parrallèle -->
+<script src="js/EXERCICE_jspourhtml.js"></script>
+
+</body>
+</html>
