@@ -96,7 +96,7 @@
         <button id="bouton2"type="button" class="btn btn-primary">Exo final 2</button>
         <button id="bouton3"type="button" class="btn btn-primary">Exo final 3</button>
         <button id="bouton4"type="button" class="btn btn-primary">Exo final 4</button>
-        <button id="bouton5"type="button" class="btn btn-primary">Exo final 5</button>
+        <button id="bouton5"type="button" class="btn btn-primary">Exo final 5 = bouton submit</button>
         <button id="bouton6"type="button" class="btn btn-primary">Exo</button>
         <button id="bouton7"type="button" class="btn btn-primary">Exo</button>
         <button id="bouton8"type="button" class="btn btn-primary">Exo</button>
@@ -148,11 +148,11 @@ Les champs annotés d'un symbole * sont obligatoires
         <label for="Sexe" id="sexe" class="col-sm-2 col-form-label">Sexe*:</label>
 
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="Genre" id="inlineRadio1" value="Masculin" >
+          <input class="form-check-input" type="radio" name="Genre" id="sexeM" value="Masculin" >
           <label class="form-check-label" for="inlineRadio1">Masculin</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="Genre" id="inlineRadio2" value="Féminin" >
+          <input class="form-check-input" type="radio" name="Genre" id="sexeF" value="Féminin" >
           <label class="form-check-label" for="inlineRadio2" >Féminin </label>
         </div>
 
@@ -205,7 +205,7 @@ Les champs annotés d'un symbole * sont obligatoires
                 <input type="email"  class=" form-control-plaintext py-2 border" id="email" placeholder="Dave.loper@afpa.fr" >
                 </div>
               </div>
-
+<!-- input type date peut être appliqué et sera un check de date direct -->
               </div>
 
                <!-- Formulaire select -->
@@ -216,11 +216,11 @@ Les champs annotés d'un symbole * sont obligatoires
                 <label for="inlineFormCustomSelect" class="col-sm-2 col-form-label align-self-center py-2" >Sujet*</label>
                 <div class="col-6 px-0">
                   <select class="custom-select mr-sm-2" id="select" >
-                    <option selected>Veuillez sélectionner un sujet</option>
-                    <option value="1">Mes commandes</option>
-                    <option value="2">Question susr un produit</option>
-                    <option value="3">Réclamations</option>
-                    <option value="4">Autres</option>
+                    <option select>Veuillez sélectionner un sujet</option>
+                    <option value="Mes commandes">Mes commandes</option>
+                    <option value="Question sur un produit">Question sur un produit</option>
+                    <option value="Réclamations">Réclamations</option>
+                    <option value="Autres">Autres</option>
                   </select>
                 </div>
               </div>
@@ -229,7 +229,7 @@ Les champs annotés d'un symbole * sont obligatoires
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1 ml-auto">Votre Question</label>
-          <textarea class="form-control" id="question" rows="3"></textarea>
+          <textarea class="form-control" id="question" rows="3" value ="" placeholder = ""></textarea>
         </div>
 
       </div>
@@ -244,7 +244,9 @@ Les champs annotés d'un symbole * sont obligatoires
       <br>
       <br>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+<!-- BOUTON Submit -->
+
+      <button type="submit" id="submit" class="btn btn-primary">Submit</button>
       <INPUT type="reset" name="annulation" value="Annuler" class="btn btn-light">
     </div>
 
@@ -303,6 +305,8 @@ Les champs annotés d'un symbole * sont obligatoires
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 -->
+<!-- intégration du fichier javascript codé en parrallèle -->
+<script src="js/EVALUATION_JS.js"></script>
 </body>
 </html>
 

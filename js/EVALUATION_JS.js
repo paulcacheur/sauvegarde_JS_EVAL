@@ -1,5 +1,9 @@
 
+
+
 // EXERCICE 1 - comptage population selon age
+
+
 
 
 var bouton1= document.getElementById("bouton1");
@@ -63,7 +67,12 @@ function denombre(nombre, texte)
 
 
 
+
 // EXERCICE 2 - table de multiplication
+
+
+
+
 
 var bouton2= document.getElementById("bouton2");
 bouton2.addEventListener("click",clickbtn2);
@@ -81,7 +90,7 @@ function clickbtn2()
     {
 
         resultat = i * nombre;
-        document.write(nombre+"*"+nombre+"="+resultat+"<br>");
+        document.write(nombre+"*"+i+"="+resultat+"<br>");
 
     }
 
@@ -94,6 +103,10 @@ function clickbtn2()
 
 
 // EXERCICE 3 - recherche d'un  prénom
+
+
+
+
 
 var bouton3= document.getElementById("bouton3");
 bouton3.addEventListener("click",clickbtn3);
@@ -137,7 +150,13 @@ function clickbtn3()
 }// fermeture fonction du bouton
 
 
+
+
+
 // EXERCICE 4
+
+
+// le bouton submit n'est pas utilisé, j'utilise le bouton 5 eo final 5 pour valider le formulaire
 
 var bouton4= document.getElementById("bouton4");
 bouton4.addEventListener("click",clickbtn4);
@@ -215,64 +234,242 @@ document.write("le total remisé est de : "+totremise+"<br>");// vérification t
 }// fermeture fonction du bouton
 
 
+
+
+
 // EXERCICE 5 - check remplissage formulaire jarditou
 
-    var nom = "x"
-    var prenom = "x"
-    var sexe;
+
+
+var submit = document.getElementById("submit");
+submit.addEventListener("click", checkform);
+
+/* si on veut que cela marche avec le bouton exo final 5
+
+var bouton5 = document.getElementById("bouton5");
+bouton5.addEventListener("click", checkform);
+
+*/
+
+
+function checkform()
+
+{// ouverture fonction du bouton
+
+    var nom = "x";
+    var prenom;
+    var sexeM = false;
+    var sexeF = false;
     var dob;
-    var adresse = "x";
-    var ville = "x";
-    var email = "x";
+    var adresse;
+    var ville;
+    var email;
     var select;
-    var question = "x";
+    var question;
 
+        //validation formulaire NOM
 
-        //NOM
-
-    var societe = document.getElementById("nom").value ;
+    nom = document.getElementById("nom").value ;
     console.log ("nom : " + nom);
-    console.log ("longueur : " + nom.lenght);
+    console.log ("longueur : " + nom.length);
 
-        if (nom.lenght<1)
+
+        if (nom.length<1)
             {
-                alert("le champ 'nom' est obligatoire");
+                window.alert("le champ 'nom' est obligatoire");
             }
 
-    var contactPersonne = document.getElementById("prenom").value ;
+         //validation formulaire PRENOM
+
+    prenom = document.getElementById("prenom").value ;
     console.log ("prenom : " + prenom);
 
-        if (prenom.lenght<1)
+
+        if (prenom.length<1)
             {
                 alert("le champ 'prenom' est obligatoire");
             }
 
-    var sexe  = document.getElementById("sexe").value ;
-    console.log ("sexe : " + prenom);
 
-    var dob = document.getElementById("dob").value ;
-    console.log ("dob : " + prenom);
+         //validation formulaire SEXE
 
-    var adresse = document.getElementById("adresse").value ;
+
+    sexeM  = document.getElementById("sexeM").checked ;
+    sexeF  = document.getElementById("sexeF").checked ;
+    console.log ("sexeM : " + sexeM);
+    console.log ("sexeF : " + sexeF);
+
+        if(sexeM == false && sexeF == false)
+            {
+                alert("le champ 'Sexe' est obligatoire");
+            }
+
+
+         //validation formulaire DOB
+
+
+    dob = document.getElementById("dob").value ;
+    console.log ("dob : " + dob);
+
+
+ // METHODE expression régulière pour cadrer le format général
+
+    var dob = new RegExp("/^[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9][0-9][0-9]$/");
+    var resultat = dob.test("javascript");
+
+    /* METHODE conditions pour valider cohérence générale de l'année
+
+    hormis l'utilisation de type = "date" dans html
+    var ladate=new Date();
+    var checkdate = false;
+    var jour =0;
+    var mois = 0;
+    var annee = 0;
+    jour = dob.substring(0, 2) - 1; // because months in JS start from 0
+    mois = dob.substring(3, 5) - 0;  
+    annee = dob.substring(6, 10) - 0;
+    console.log(annee);
+
+            if (annee>1900 || annee< now.getFullYear())
+                {
+
+                    checkdate = true;
+                }
+            else
+                {
+                    alert("date invalide, merci de recommencer");
+                    checkdate = false;
+                }
+
+
+METHODE spécifique pour cadrer date réelle
+
+var annee   = now.getFullYear();
+var mois    = now.getMonth() + 1;
+var jour    = now.getDate();
+var heure   = now.getHours();
+var minute  = now.getMinutes();
+var seconde = now.getSeconds();
+ 
+alert( "Nous sommes le "+jour+"/"+mois+"/"+annee+" et il est "+heure+" heure "+minute+" minutes "+seconde+" secondes" );
+// Résultat: Nous sommes le 2/11/2012 et il est 19 heure 57 minutes 37 secondes
+
+
+                */
+
+                // Validation champ Code Postale
+
+    codepostal = document.getElementById("codepostal").value ;
+    console.log ("codepostal : " + codepostal);
+
+    var cptaille = 0;
+    var checkcp = false; //booléen
+
+    cptaille = codepostal.length;
+    console.log(codepostal.length); // véification taille du code
+    codepostal = parseInt(codepostal); //conversion du CP en numérique
+    console.log("code postale : " + codepostal + "type of : " + typeof codepostal + "length " + cptaille);
+
+            if (cptaille == 5 && isNaN(codepostal)!= true)
+
+                {
+                    checkcp = true;
+                }
+
+            else 
+                {
+                    window.alert("Le code postal doit comprendre 5 caractères numériques.");
+                    checkcp = false;
+                }
+
+                // Validation champ adresse
+
+    adresse = document.getElementById("adresse").value ;
     console.log ("adresse : " + adresse);
 
-    var codePostal = document.getElementById("codepostal").value ;
-    console.log ("codepostal : " + codePostal);
+    if (adresse.length<1)
+    {
+        window.alert("le champ 'adresse' doit être renseigné");
+    }
 
-    var ville = document.getElementById("ville").value ;
+                // Validation champ ville
+
+    ville = document.getElementById("ville").value ;
     console.log ("ville : " + ville);
 
-    var email = document.getElementById("email").value ;
+    if (ville.length<1)
+    {
+        window.alert("le champ 'ville' doit être renseigné");
+    }
+
+                // Validation champ email
+
+    email = document.getElementById("email").value ;
     console.log ("email : " + email);
+    var checkcemail= false; //booléen
 
-    var select  = document.getElementById("select").value ;
+            if (email.indexOf("@") != -1) //check si le caractère @est présent
+
+                { 
+                    checkcemail = true;
+                } 
+
+            else
+
+                {
+                    window.alert("L'adresse mail doit comporter un caractère '@'.");
+                    checkcemail = false;
+                }
+
+
+                // Validation champ sélect
+
+
+    select  = document.getElementById("select").value ;
     console.log ("select : " + select);
+    var checkselect = false; //booléen
 
-    var question = document.getElementById("question").value ;
+                    // VALIDATION CHOIX SUJET
+
+
+                if (select == "Mes commandes" || select == "Question sur un produit" || select == "Réclamations"  || select == "Autres")
+                    {
+                        checkselect = true;
+
+                                // si le choix est fait, alors cela doit apparaitre dans la box
+                              // condition pour éviter écrasement des données par select si un commentaire rentré
+                                if (document.getElementById("question").value ="")
+
+                                {
+                                    document.getElementById("question").value = select;
+                                }
+  
+                    }
+
+                    else
+
+                    {
+                        window.alert("merci de renseigne un Sujet");
+                        checkcemail = false;
+                    }
+
+                    // VERIFICATION de la CASE COCHEE
+
+    question = document.getElementById("defaultCheck1").checked ;
     console.log ("question : " + question);
+    var checkcheckbox = false;
 
 
+            if (question == true) //check si la check box est bien cochée
+                { 
+                    checkcheckbox = true;
+                } 
 
+            else
 
+                {
+                    window.alert("Vous devez autoriser le traitement du formulaire");
+                    checkcheckbox = false;
+                }
 
-
+}// fermeture fonction du bouton
