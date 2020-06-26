@@ -250,8 +250,6 @@ var bouton5 = document.getElementById("bouton5");
 bouton5.addEventListener("click", checkform);
 
 */
-
-
 function checkform()
 
 {// ouverture fonction du bouton
