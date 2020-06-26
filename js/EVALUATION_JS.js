@@ -472,4 +472,16 @@ alert( "Nous sommes le "+jour+"/"+mois+"/"+annee+" et il est "+heure+" heure "+m
                     checkcheckbox = false;
                 }
 
+                /*
+                
+validation avec apparition message en cas d'erreur dans le formulaire avec d-none
+element.classList.remove("d-none");
+
+
+Autre option = créer un span vide avec un ID 
+et le remplir dans javascript
+
+                */ 
+
+
 }// fermeture fonction du bouton
